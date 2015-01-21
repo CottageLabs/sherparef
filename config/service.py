@@ -1,6 +1,6 @@
 # overrides for the webapp deployment
 DEBUG = False
-PORT = 501999999999
+PORT = 5019
 SSL = False
 THREADED = True
 
@@ -10,7 +10,7 @@ ROMEO_API_KEY = ""
 # configuration for elasticsearch connection for autocomplete handling
 
 ELASTIC_SEARCH_HOST = "http://localhost:9200"
-ELASTIC_SEARCH_INDEX = "fact"
+ELASTIC_SEARCH_INDEX = "sherparef"
 
 ELASTIC_SEARCH_MAPPINGS = [
     "service.dao.JournalAutocompleteDAO"
