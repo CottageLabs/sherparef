@@ -85,7 +85,10 @@ $(document).ready(function() {
         var juliet_link = "http://www.sherpa.ac.uk/juliet/index.php?fPersistentID=" + fact.juliet_ids().join(",");
 
         $("#results-journal-name").html(fact.journal_name());
-        $("#results-funder-name").html(fact.funder_names().join(", "));
+
+        var funder_names = "<ul><li>" + fact.funder_names().join("</li><li>") + "</li></ul>";
+        $("#results-funder-name").html(funder_names);
+
         $("#results-issn").html(fact.issn());
         $("#results-publisher-name").html(fact.publisher());
 
@@ -94,6 +97,7 @@ $(document).ready(function() {
         if (oc === "yes") {
             $("#results-compliance").addClass("zebra-green");
             $("#results-compliance-level").html("COMPLIANT").addClass("compliant");
+            $("#results-overall-compliance-msg").html("This journal lets you comply with REF's policy");
         } else {
             $("#results-compliance").addClass("zebra-red");
             if (oc === "no") {
@@ -103,10 +107,10 @@ $(document).ready(function() {
             } else if (oc === "unknown") {
                 $("#results-compliance-level").html("COMPLIANCE UNKNOWN").removeClass("compliant");
             }
+            $("#results-overall-compliance-msg").html("This journal does not let you comply with REF's policy");
         }
 
-        $("#results-overall-compliance-msg").html(fact.overall_compliance_msg())
-
+        /*
         $("#results-gold-compliance-icon").removeClass("fa-ban").removeClass("fa-check-circle");
         $("#results-gold-compliance-container").removeClass("can-publish");
         var gc = fact.gold_compliance();
@@ -128,6 +132,7 @@ $(document).ready(function() {
             gcr += "<br>" + gcf;
         }
         $("#results-gold-compliance-reason").html(gcr);
+        */
 
         $("#results-green-compliance-icon").removeClass("fa-ban").removeClass("fa-check-circle");
         $("#results-green-compliance-container").removeClass("can-publish");
@@ -149,6 +154,7 @@ $(document).ready(function() {
 
         $("#results-overall-recommendation").html(fact.overall_recommendation());
 
+        /*
         $("#results-goldadvice-container").hide();
         $("#results-goldadvice-list").empty();
 
@@ -169,6 +175,7 @@ $(document).ready(function() {
             $("#results-goldadvice-list").html(golddetails);
             $("#results-goldadvice-container").show();
         }
+        */
 
         $("#results-greenadvice-container").hide();
         $("#results-greenadvice-list").empty();
@@ -234,6 +241,7 @@ $(document).ready(function() {
             return frag;
         }
 
+        /*
         var golddecision = fact.gold_decision();
         var gd = "";
         for (var i = 0; i < golddecision.length; i++) {
@@ -245,6 +253,7 @@ $(document).ready(function() {
             gd += frag;
         }
         $("#results-gold-decisions").html(gd);
+        */
 
         var greendecision = fact.green_decision();
         var grd = "";

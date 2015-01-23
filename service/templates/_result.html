@@ -1,7 +1,7 @@
 <div id="results-display" class="search-box results" style="display:none">
     <div class="results">
         <h3>  Journal: <span class="bold" id="results-journal-name">[Journal Name]</span></h3>
-        <h3 class="funder-style">Funder: <span class="bold" id="results-funder-name">[Funder(s)]</span></h3>
+        <h3 class="funder-style">REF Panel(s): <span class="bold" id="results-funder-name">[Funder(s)]</span></h3>
         <h4 class="issn-style">ISSN: <span id="results-issn">[ISSN]</span></h4>
         <h4>Publisher: <span id="results-publisher-name">[Publisher]</span></h4>
     </div>
@@ -10,8 +10,10 @@
         <h5 class="uppercase" id="results-compliance-level">[compliance]</h5> <!-- insert compliant class if compliant -->
         <p id="results-overall-compliance-msg">[overall.val_overallcompliance]</p>
 
+        {#
         <p class="bold result-info" id="results-gold-compliance-container"><span class="fa" id="results-gold-compliance-icon"></span> <span id="results-gold-compliance">[gold compliance]</span></p> <!-- fa-ban if not compliant, fa-check-circle if compliant | can-publish if compliant -->
         <p id="results-gold-compliance-reason">[gold compliance reason]</p>
+        #}
 
         <p class="bold result-info" id="results-green-compliance-container"><span class="fa" id="results-green-compliance-icon"></span> <span id="results-green-compliance">[green compliance]</span></p> <!-- insert compliant class if compliant -->
         <p id="results-green-compliance-reason">[green compliance reason]</p>
@@ -20,10 +22,12 @@
     <div class="results">
         <h5 class="uppercase" id="results-overall-recommendation">[overall recommendation]</h5>
 
+        {#
         <div id="results-goldadvice-container" style="display:none">
             <p class="bold result-info">Publishing with open access:</p>
             <div id="results-goldadvice-list"></div>
         </div>
+        #}
 
         <div id="results-greenadvice-container" style="display:none">
             <p class="bold result-info">Self-archiving:</p>
@@ -52,8 +56,10 @@
 
             <div class="panel-collapse collapse" id="intro-one">
                 <div class="panel-body">
+                    {#
                     <h4 class="path-heading">Publishing with open access</h4>
                     <div id="results-gold-decisions"></div>
+                    #}
                     <!-- basic structure is as follows
                     <div class="zebra-green path">
                         <p>[0 level decision object]</p>
