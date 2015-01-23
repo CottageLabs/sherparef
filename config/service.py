@@ -7,6 +7,8 @@ THREADED = True
 # You need to put this in your local.cfg - it allows us to connect to the fact api
 ROMEO_API_KEY = ""
 
+FACT_BASE_URL = "http://www.sherpa.ac.uk/ref/api-beta.php"
+
 # configuration for elasticsearch connection for autocomplete handling
 
 ELASTIC_SEARCH_HOST = "http://localhost:9200"

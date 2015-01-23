@@ -31,6 +31,11 @@ $(document).ready(function() {
 <script type="text/javascript">
 $(document).ready(function() {
 
+    var input_map = {
+        "x.1" : ["877.1", "881.1", "884.1", "887.1"],
+        "x.2" : ["877.2", "881.2", "884.2", "887.2"]
+    };
+
     $("#funders-select").select2({
         placeholder: 'Click to select Funders'
     });
@@ -375,9 +380,29 @@ $(document).ready(function() {
             window.history.pushState("", "", url);
         }
         $("#searching").show();
+
+        // we have a custom funder selecter which proxies for multiple funders, so expand that
+        // out before sending it to the back end
+        var af = [];
+        for (var i = 0; i < fs.length; i++) {
+            var f = fs[i];
+            if (input_map[f]) {
+                var sub = input_map[f];
+                for (var j = 0; j < sub.length; j++) {
+                    if ($.inArray(sub[j], af) === -1) {
+                        af.push(sub[j]);
+                    }
+                }
+            } else {
+                if ($.inArray(f, af) === -1) {
+                    af.push(f);
+                }
+            }
+        }
+
         octopus.sherpafact.proxy({
             journal_or_issn: joi,
-            funders: fs,
+            funders: af,
             success: factResults
         });
     }
