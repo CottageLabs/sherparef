@@ -82,11 +82,21 @@ $(document).ready(function() {
         var fact = params.fact;
 
         var romeo_link = "http://www.sherpa.ac.uk/romeo/search.php?issn=" + fact.issn();
-        var juliet_link = "http://www.sherpa.ac.uk/juliet/index.php?fPersistentID=" + fact.juliet_ids().join(",");
+
+        var jids = fact.juliet_ids();
+        var jnorm = [];
+        for (var i = 0; i < jids.length; i++) {
+            var jid = jids[i];
+            var root = jid.toString().split(".")[0];
+            if ($.inArray(root, jnorm) === -1) {
+                jnorm.push(root);
+            }
+        }
+        var juliet_link = "http://www.sherpa.ac.uk/juliet/index.php?fPersistentID=" + jnorm.join(",");
 
         $("#results-journal-name").html(fact.journal_name());
 
-        var funder_names = "<ul><li>" + fact.funder_names().join("</li><li>") + "</li></ul>";
+        var funder_names = fact.funder_names().join("<br>");
         $("#results-funder-name").html(funder_names);
 
         $("#results-issn").html(fact.issn());
