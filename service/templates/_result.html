@@ -1,16 +1,18 @@
 <div id="results-display" class="search-box results" style="display:none">
     <div class="results">
 
+        <!--
         <div class="row"><div class="col-md-2"><h3>Journal:</h3></div><div class="col-md-10"><h3><span class="bold" id="results-journal-name">[Journal Name]</span></h3></div></div>
         <div class="row"><div class="col-md-2"><h3>REF Panel(s):</h3></div><div class="col-md-10"><h3><span class="bold" id="results-funder-name">[Funder(s)]</span></h3></h3></div></div>
+        -->
 
         <h4 class="issn-style">ISSN: <span id="results-issn">[ISSN]</span></h4>
         <h4>Publisher: <span id="results-publisher-name">[Publisher]</span></h4>
     </div>
 
     <div class="results" id="results-compliance"> <!-- insert zebra-green or zebra-red -->
-        <h5 class="uppercase" id="results-compliance-level">[compliance]</h5> <!-- insert compliant class if compliant -->
-        <p id="results-overall-compliance-msg">[overall.val_overallcompliance]</p>
+        <h5 class="uppercase" id="results-compliance-level" style="padding-bottom: 15px">[compliance]</h5> <!-- insert compliant class if compliant -->
+        {# <p id="results-overall-compliance-msg">[overall.val_overallcompliance]</p> #}
 
         {#
         <p class="bold result-info" id="results-gold-compliance-container"><span class="fa" id="results-gold-compliance-icon"></span> <span id="results-gold-compliance">[gold compliance]</span></p> <!-- fa-ban if not compliant, fa-check-circle if compliant | can-publish if compliant -->
@@ -89,10 +91,10 @@
     </div>
 
     <div class="disclaimer">
-        Sherpa REF information is accurate to the best of our knowledge, but should not be relied upon for legal advice.
+        SHERPA/REF information is accurate to the best of our knowledge, but should not be relied upon for legal advice.
 
         <div class="additional-info">
-            <p>Please <a href="#" class="feedback-link">send feedback to Sherpa REF</a> regarding inaccurate or missing data. </p>
+            <p>Please <a href="#" class="feedback-link">send feedback to SHERPA/REF</a> regarding inaccurate or missing data. </p>
             <!-- <p>Data updated or checked: 07-Mar-2014.</p> we don't currently have this data in the API -->
         </div>
 

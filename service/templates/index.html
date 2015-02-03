@@ -106,18 +106,18 @@ $(document).ready(function() {
         var oc = fact.overall_compliance();
         if (oc === "yes") {
             $("#results-compliance").addClass("zebra-green");
-            $("#results-compliance-level").html("COMPLIANT").addClass("compliant");
-            $("#results-overall-compliance-msg").html("This journal lets you comply with REF's policy");
+            $("#results-compliance-level").html("This journal lets you comply with REF policy").addClass("compliant");
+            // $("#results-overall-compliance-msg").html("This journal lets you comply with REF's policy");
         } else {
             $("#results-compliance").addClass("zebra-red");
             if (oc === "no") {
-                $("#results-compliance-level").html("NOT COMPLIANT").removeClass("compliant");
+                $("#results-compliance-level").html("This journal does not let you comply with REF policy").removeClass("compliant");
             } else if (oc === "maybe") {
-                $("#results-compliance-level").html("MAYBE COMPLIANT").removeClass("compliant");
+                $("#results-compliance-level").html("This journal does may let you comply with REF policy").removeClass("compliant");
             } else if (oc === "unknown") {
-                $("#results-compliance-level").html("COMPLIANCE UNKNOWN").removeClass("compliant");
+                $("#results-compliance-level").html("It is not know if this journal will let you comply with REF policy").removeClass("compliant");
             }
-            $("#results-overall-compliance-msg").html("This journal does not let you comply with REF's policy");
+            // $("#results-overall-compliance-msg").html("This journal does not let you comply with REF policy");
         }
 
         /*
