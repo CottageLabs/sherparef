@@ -14,6 +14,8 @@ FACT_BASE_URL = "http://www.sherpa.ac.uk/ref/api-beta.php"
 ELASTIC_SEARCH_HOST = "http://localhost:9200"
 ELASTIC_SEARCH_INDEX = "sherparef"
 
+ELASTIC_SEARCH_VERSION = "1.4.2"
+
 ELASTIC_SEARCH_MAPPINGS = [
     "service.dao.JournalAutocompleteDAO"
 ]
